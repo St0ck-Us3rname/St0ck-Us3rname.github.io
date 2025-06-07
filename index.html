@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-GB"> <!-- Language attribute of HTML tag set to British English-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="St0ck-Us3rname">
+    <meta name="description"
+        content="This page functions as a dictionary of html tags to be referred to during future development">
+    <title>Homepage</title>
+    <link rel="icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"> <!-- CSS can be added from separate CSS file-->
+
+    <!-- style tag allows insertion of CSS directly in HTML -->
+    <style>
+        html {
+            font-size: 22px
+        }
+    </style>
+</head>
+
+<body>
+    <header> <!-- Semantic tag for webpage heading-->
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+    </header>
+
+    <main> <!-- Semantic tag for main section of webpage-->
+        <hr> <!-- Horizontal rule-->
+        <section id="Text-tags"> <!--Used for internal referencing later on--> <!-- Article tag can also be used-->
+            <h2>Text tags</h2>
+
+            <p>
+                Paragraph
+                <br>Line break
+                <br><em>Emphasis!</em>
+                <br><strong>Strong emphasis!</strong>
+                <br>&nbsp;White space entity
+                <br>&lt;Less than symbol using HTML entity (+More! &copy;&gt;)
+                <br><abbr title="Abbreviation">abbr</abbr>
+                <br>
+            </p>
+            <address>Address element</address>
+
+        </section>
+        <hr>
+        <h2>Lists</h2>
+        <h3>Ordered lists</h3>
+        <ol>
+            <li>Element 1</li>
+            <li>Element 2</li>
+        </ol>
+
+        <h3>Unordered lists</h3>
+        <ul>
+            <li>Element 1</li>
+            <li>Element 2</li>
+        </ul>
+
+        <h3>Description lists</h3>
+        <dl>
+            <dt>Description term 1</dt>
+            <dd>Description 1 detail</dd>
+
+            <dt>Decription term 2</dt>
+            <dd>Description 2 detail</dd>
+        </dl>
+
+        <hr>
+        <h2>Links</h2>
+        <p>
+            Anchor tag <a href="https://www.google.com">Links</a> to other webpages. Links have been given different
+            colours in main.css.
+            <br>Relative links to <a href="redirect.html">other pages</a> on the website
+            <br>Internal reference such as <a href="#Text-tags">Back to Top</a>
+            <br>Internal references can be used in a navigation section such as:
+        </p>
+        <nav aria-label="webpage navigation"> <!--aria label used to reference nav section-->
+            <ul>
+                <li>
+                    <a href="#Text-tags">Top</a>
+                </li>
+                <li>
+                    <a href="#Bottom">Bottom</a>
+                </li>
+            </ul>
+        </nav>
+        <p>
+            Download link: <a href="images/logo.jpg" download>Website logo</a>
+            <br>Open new tab with <a href="https://www.google.com/" target="_blank">target</a>
+        </p>
+
+        <hr>
+        <h2>Images</h2>
+        <p>Loading an image</p>
+        <img src="images/logo.jpg" alt="Website logo" title="Bubble logo" width="540" height="360" loading="lazy">
+        <!-- Lazy loading loads the image when scrolled to. Eager loading loads the image when the webpage is loaded-->
+
+        <p>Loading an image within a figure that has a caption</p>
+        <figure>
+            <img src="images/logo.jpg" alt="Website logo" title="Bubble logo" width="540" height="360" loading="lazy">
+            <figcaption>
+                Figure 1: The website's bubble logo
+            </figcaption>
+        </figure>
+
+        <hr>
+        <h2>Displaying code</h2>
+        <code>
+            #include &lt;iostream&gt;
+            <br><br>int main() {
+                <br>&emsp;std::cout &lt;&lt; "Hello World!" &lt;&lt; std::endl;
+                <br>&emsp;return 0;
+                <br>}
+        </code>
+
+        <hr>
+        <h2>Semantic tags</h2>
+        <p>e.g. section, article, aside, details, summary, header, main, footer</p>
+        <details>
+            <summary>details and summary work together</summary>
+            <p>They provide a drop down option for more information</p>
+        </details>
+        <p>Highlight text with <mark>&lt;mark&gt;</mark>
+            <br><time datetime="08:00">8 am</time>: time semantic tag
+            <br><time datetime="PT3H">3 hours</time>: time duration semantic tag
+            <br>&lt;div&gt; is an outdated version of &lt;section&gt;
+        </p>
+
+        <hr>
+        <h2>Tables</h2>
+        <table>
+            <caption>Table caption</caption>
+            <thead> <!-- Table head semantic tag-->
+                <tr>
+                    <th>&nbsp;</th> <!--Blank cell for row titles-->
+                    <th scope="col">Column 1 Header</th>
+                    <th scope="col">Column 2 Header</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Table body semantic tag-->
+                <tr> <!-- Table row element-->
+                    <th scope="row">Row 1 header</th>
+                    <td> Row 1</td> <!-- Table data element-->
+                    <td>Element 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">Row 2 header</th>
+                    <td>Row 2</td>
+                    <td>Element 2</td>
+                </tr>
+                <tr>
+                    <th scope="row">Row 3 header</th>
+                    <td colspan="2">This element spans both columns</td>
+                </tr>
+                <tr>
+                    <th scope="row">Row 4 header</th>
+                    <td rowspan="2">Two rows of data:</td>
+                    <td>This one</td>
+                </tr>
+                <tr>
+                    <th scope="row">Row 5 header</th>
+                    <td>And this one</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">A table footer can go here for summaries or column averages etc.</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <hr>
+        <h2>Forms and inputs</h2>
+        <p>Contact form example</p>
+        <form action="https://httpbin.org/get" method="get">
+            <fieldset> <!-- Used to split the form into sections-->
+                <legend>Personal data</legend>
+                <p> <!-- Placing in a paragraph means separate fields are on different lines-->
+                    <label for="fullName">Name:</label>
+                    <input type="text" name="fullName" id="fullName" placeholder="Type your name here" autocomplete="on"
+                        required autofocus>
+                    <!--Name attribute is the name sent with the response. 
+                id links it to the above label. 
+                Autocomplete remembers a user's past entries and suggests them
+                Autofocus means the user can start typing in the field as soon as the page loads-->
+                </p>
+                <p>
+                    <label for="emailAddress">Email:</label>
+                    <input type="text" name="emailAddress" id="emailAddress" placeholder="me@email.com"
+                        autocomplete="on" required>
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    <!--Password type obscures what is typed and cannot be autocompleted-->
+                </p>
+                <p>
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="07123 456789" pattern="[0-9]{5} [0-9]{6}">
+                    <!--Pattern attribute is regex-->
+                </p>
+                <p>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" id="age" min="18" max="100" step="1" value="50">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Coding data</legend>
+                <p>
+                    <label for="coding">Favourite language:</label>
+                    <select name="coding" id="coding">
+                        <!--Allow multiple selections with 'multiple' attribute-->
+                        <!--Set limit on how many options show by default with 'size' attribute-->
+
+                        <optgroup label="High level">
+                            <option value="py">Python</option>
+                        </optgroup>
+                        <optgroup label="Low level">
+                            <option value="cpp">C++</option>
+                        </optgroup>
+                        <optgroup label="Web development">
+                            <option value="html" selected>HTML</option> <!--Selected means the default in the window-->
+                            <option value="css">CSS</option>
+                            <option value="js">JavaScript</option>
+                        </optgroup>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="first">First language</label>
+                    <input type="text" name="first language" id="first" list="language-list">
+                    <datalist id="language-list">
+                        <option value="Python">
+                        <option value="C++">
+                        <option value="HTML">
+                        <option value="CSS">
+                        <option value="JavaScript">
+                    </datalist>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>What will you learn next?</legend>
+                <p>
+                    <input type="radio" name="next-lang" id="high" value="High level language">
+                    <label for="high">High level language</label>
+                </p>
+                <p>
+                    <input type="radio" name="next-lang" id="low" value="Low level language">
+                    <label for="low">Low level language</label>
+                </p>
+                <p>
+                    <input type="radio" name="next-lang" id="web" value="Web development language">
+                    <label for="web">Web development language</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Which do you NOT wish to learn?</legend>
+                <p>
+                    <input type="checkbox" name="not-lang" id="high-1" value="High level language">
+                    <label for="high">High level language</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="not-lang" id="low-1" value="Low level language">
+                    <label for="low">Low level language</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="not-lang" id="web-1" value="Web development language">
+                    <label for="web">Web development language</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Send me a note</legend>
+                <label for="message">Your message:</label>
+                <br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message here"></textarea>
+            </fieldset>
+            <br>
+            <button type="submit">Submit form</button>
+            <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post form</button>
+            <button type="reset">Reset form</button>
+            <!--Get vs Post: Get displays form data in URL and sends data in 'args' field. Post does not change the URL and sends data in 'form' field-->
+        </form>
+
+
+    </main>
+
+    <footer> <!-- Semantic tag for webpage footer-->
+        <section id="Bottom">
+            <hr>
+            <h2>Webpage Footer</h2>
+            <hr>
+        </section>
+    </footer>
+</body>
+
+</html>

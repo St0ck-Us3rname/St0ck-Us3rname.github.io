@@ -1,0 +1,18 @@
+body {
+    background-color: #333;
+    color: whitesmoke;
+}
+
+/* Changing the colour of anchor tags */
+a {
+    color: skyblue
+}
+
+a:visited {
+    color: aliceblue
+}
+
+a:hover,
+a:active {
+    color: yellow
+}
